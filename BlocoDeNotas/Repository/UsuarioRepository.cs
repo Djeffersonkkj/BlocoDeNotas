@@ -6,9 +6,9 @@ namespace BlocoDeNotas.Repository;
 
 public class UsuarioRepository
 {
-    public Usuario ChamarUsuario(string email, string senha)
+    public Usuario ObterUsuario(string email, string senha)
     {
-        var dadosUsuario = CsvHelper.VarrerUsuario(email, senha);
+        var dadosUsuario = CsvHelper.BuscarUsuario(email, senha);
 
         Usuario usuario = new Usuario(
             int.Parse(dadosUsuario[0]),

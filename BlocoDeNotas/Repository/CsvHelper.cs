@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace BlocoDeNotas.Repository.Csvhelper;
 public static class CsvHelper
 {
-    public static string[] VarrerUsuario(string email, string senha)
+    public static string[] BuscarUsuario(string email, string senha)
     {
         var usuario = File.ReadAllLines
             ("Data/Usuario.csv")
@@ -17,7 +17,7 @@ public static class CsvHelper
         return usuario;
     }
 
-    public static IEnumerable<string[]> VarrerNota(Usuario usuario)
+    public static IEnumerable<string[]> BuscarNotasDoUsuario(Usuario usuario)
     {
         var notas = File.ReadAllLines
             ("Data/Nota.csv")

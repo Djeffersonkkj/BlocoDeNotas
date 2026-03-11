@@ -4,11 +4,11 @@ using BlocoDeNotas.Repository;
 UsuarioRepository usuarioRepository = new UsuarioRepository();
 NotaRepository notaRepository = new NotaRepository();
 
-var usuario = usuarioRepository.ChamarUsuario("djefferson141005@gmail.com", "123456789");
+var usuario = usuarioRepository.ObterUsuario("djefferson141005@gmail.com", "123456789");
 System.Console.WriteLine(usuario.ToString());
 
 
-var notas = notaRepository.ChamarNotas(usuario);
+var notas = notaRepository.ObterNotasDoUsuario(usuario);
 System.Console.WriteLine();
 foreach ( var nota in notas)
 {

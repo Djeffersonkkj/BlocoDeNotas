@@ -3,9 +3,9 @@ using BlocoDeNotas.Repository.Csvhelper;
 
 public class NotaRepository
 {
-    public IEnumerable<Nota> ChamarNotas(Usuario usuario)
+    public IEnumerable<Nota> ObterNotasDoUsuario(Usuario usuario)
     {
-        var notasDados = CsvHelper.VarrerNota(usuario);
+        var notasDados = CsvHelper.BuscarNotasDoUsuario(usuario);
         List<Nota> notas = new List<Nota>{};
 
         foreach (var linha in notasDados)
