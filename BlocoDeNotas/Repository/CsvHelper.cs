@@ -27,4 +27,13 @@ public static class CsvHelper
         
         return notas;
     }
+
+    public static int ContarNotas()
+    {
+        var quantidadeNotas = File.ReadAllLines("Data/Nota.csv")
+            .Skip(1)
+            .Count();
+
+        return quantidadeNotas;
+    }
 }

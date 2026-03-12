@@ -22,4 +22,15 @@ public class NotaRepository
         
         return notas;
     }
+
+    public void CriarNota(Usuario usuario, string titulo, string texto)
+    {
+        var quantidadeNotas = CsvHelper.ContarNotas();
+
+        string novaNota = 
+$@"
+{quantidadeNotas + 1},{usuario.Id},{titulo},{texto}";
+
+        File.AppendAllText("Data/Nota.csv", novaNota);
+    }
 }
